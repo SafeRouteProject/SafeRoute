@@ -7,7 +7,12 @@ const session = require("express-session");
 const massive = require("massive");
 const port = process.env.PORT || 3001;
 
-const { authenticateUser, createNewUser } = require(`./controllers/authCtrl`);
+const {
+  authenticateUser,
+  createNewUser,
+  getUser,
+  logout
+} = require(`./controllers/authCtrl`);
 massive(process.env.DATABASE_KEY)
   .then(db => app.set("db", db))
   .catch(error => {
@@ -17,9 +22,22 @@ massive(process.env.DATABASE_KEY)
 app.use(json());
 app.use(cors());
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: false, //only have a session if it was interacted with. Saves on storage.
+    resave: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 2 //2 days
+    }
+  })
+);
 //--------------USER AUTHENTICATION------------------
-app.post("/api/authenticate_user/:id", authenticateUser);
+app.post("/api/authenticate_user", authenticateUser);
 app.post("/api/create_new_user", createNewUser);
+app.post("/api/logout", logout);
+
+//------------FUNCTIONS-----------
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
