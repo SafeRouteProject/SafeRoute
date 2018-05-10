@@ -1,5 +1,7 @@
 //initial state
-const initialState = {};
+const initialState = {
+  exactLocation: ""
+};
 
 //action constants
 
