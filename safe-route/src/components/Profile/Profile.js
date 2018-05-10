@@ -7,7 +7,11 @@ class Profile extends Component {
     this.state = {};
   }
   render() {
-    return <div>Profile</div>;
+    return (
+      <div>
+        <div classname='profile-pfp' />
+      </div>
+    );
   }
 }
 export default Profile;
