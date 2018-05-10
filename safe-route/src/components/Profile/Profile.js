@@ -7,7 +7,7 @@ class Profile extends Component {
     this.state = {};
   }
   render() {
-    return <div />;
+    return <div>Profile</div>;
   }
 }
 export default Profile;
