@@ -18,14 +18,15 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "recompose": "^0.27.0",
     "redux": "^4.0.0",
     "redux-promise-middleware": "^5.1.1"
   },
+  "proxy": "http://localhost:3001",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy":"http://localhost:3001"
+  }
 }

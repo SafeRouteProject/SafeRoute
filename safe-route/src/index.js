@@ -20,8 +20,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={Profile} />
-          <Route patth="/login" component={LandingLogin} />
-          <Route />
+          <Route path="/login" component={LandingLogin} />
         </Switch>
       </Router>
     </MuiThemeProvider>
