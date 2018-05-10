@@ -19,7 +19,7 @@ app.use(cors());
 
 //--------------USER AUTHENTICATION------------------
 app.post("/api/authenticate_user/:id", authenticateUser);
-app.post("/api/create_new_user/:id", createNewUser);
+app.post("/api/create_new_user", createNewUser);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
