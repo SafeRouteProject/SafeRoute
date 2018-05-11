@@ -13,6 +13,7 @@ const {
   getUser,
   logout
 } = require(`./controllers/authCtrl`);
+
 massive(process.env.DATABASE_KEY)
   .then(db => app.set("db", db))
   .catch(error => {
@@ -21,6 +22,9 @@ massive(process.env.DATABASE_KEY)
 
 app.use(json());
 app.use(cors());
+
+app.use("/graphql", graphqlHTTP({ schema, rootValue: root, graphiql: true }));
+app.post("/graphql", graphqlHTTP({ schema, rootValue: root, graphiql: false }));
 
 app.use(
   session({
@@ -32,12 +36,11 @@ app.use(
     }
   })
 );
+
 //--------------USER AUTHENTICATION------------------
 app.post("/api/authenticate_user", authenticateUser);
 app.post("/api/create_new_user", createNewUser);
 app.post("/api/logout", logout);
-
-//------------FUNCTIONS-----------
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
