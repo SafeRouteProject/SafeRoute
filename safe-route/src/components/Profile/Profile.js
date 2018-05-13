@@ -3,6 +3,7 @@ import "./Profile.css";
 import { connect } from "react-redux";
 import { getCurrentLocation } from "../../ducks/user";
 
+let intervalName;
 class Profile extends Component {
   constructor() {
     super();
@@ -10,12 +11,13 @@ class Profile extends Component {
   }
   componentDidMount() {
     this.props.getCurrentLocation();
-    setInterval(() => this.props.getCurrentLocation(), 5000);
+    intervalName = setInterval(() => this.props.getCurrentLocation(), 5000);
   }
   componentWillMount() {
-    clearInterval();
+    clearInterval(intervalName);
   }
   render() {
+    // console.log(intervalName);
     return (
       <div className="profile-container">
         <div className="profile-banner" />
