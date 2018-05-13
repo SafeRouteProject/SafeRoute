@@ -7,7 +7,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar-container">
-        <Link to="/" class="link">
+        <Link to="/alert" class="link">
           <i class="fas fa-exclamation-circle navbar-profile-icon" />
         </Link>
         <Link to="/social" class="link">
