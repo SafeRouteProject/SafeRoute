@@ -5,7 +5,8 @@
 .alert-container {
   height: calc(100vh - 75px);
   width: 100vw;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 
 .background {
@@ -35,8 +36,78 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 250px;
 }
 
 .alert-text {
   font-size: 30px;
+  text-transform: capitalize;
+}
+
+.alert-darken{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.24);
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  transition: .1s linear;
+}
+
+/* SWEET ALERT  */
+
+.sweet-alert{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 200px;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 1001;
+  /* transition: .1s linear; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.alert-info{
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sweet-alert-title-hide{
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sweet-alert-title{
+  opacity: 1;
+  font-size: 32px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.close-btn-hidden{
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
+.close-btn{
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 3s linear;
+  width: 30%;
 }
