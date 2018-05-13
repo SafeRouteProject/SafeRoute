@@ -8,18 +8,29 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div classname='profile-container'>
-        <div className='profile-banner' />
-        <div className='profile-pfp' />
-        <section className='profile-user-info-container'>
-          <h2 className='profile-username'>Username</h2>
-          <h3 className='profile-fullname'>Full Name</h3>
-          <h3 className='profile-email'>useremail@email.com</h3>
-          <h3 className='profile-phone'>555-555-5555</h3>
+      <div className="profile-container">
+        <div className="profile-banner" />
+        <div className="profile-pfp" />
+        <section className="profile-user-info-container">
+          <h2 className="profile-username">Username</h2>
+          <h3 className="profile-fullname">Full Name</h3>
+          <h3 className="profile-email">useremail@email.com</h3>
+          <h3 className="profile-phone">555-555-5555</h3>
         </section>
 
-        <section className='profile-groups-container'>
-          <h3 className='profile-groups'>Your Groups</h3>
+        <section className="profile-groups-container">
+          <h3 className="profile-groups-text">Your Groups</h3>
+          <img
+            src="https://images.pexels.com/photos/773594/pexels-photo-773594.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            className="profile-groups-image image-1"
+          />
+          <img
+            src="https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            className="profile-groups-image image-2"
+          />
+          <div className="profile-groups-image image-3">
+            <h3>+4</h3>
+          </div>
         </section>
       </div>
     );
