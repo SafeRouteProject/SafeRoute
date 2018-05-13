@@ -6,6 +6,15 @@
   font-family: "Raleway", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.profile-container {
+  min-height: 100vh;
+  z-index: -5;
+  background-image: url("https://images.pexels.com/photos/776390/pexels-photo-776390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .profile-banner {
   width: 100vw;
   height: 140px;
@@ -69,14 +78,17 @@
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.profile-groups-text{
-    margin-left: 15px;
-    font-size: 16px;
+.profile-groups-text {
+  margin-left: 15px;
+  font-size: 16px;
 }
 
-.profile-groups-image{
+.profile-groups-image {
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -86,15 +98,15 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.205);
 }
 
-.image-1{
+.image-1 {
   right: 15px;
 }
 
-.image-2{
+.image-2 {
   right: 35px;
 }
 
-.image-3{
+.image-3 {
   right: 55px;
   color: black;
   text-align: center;

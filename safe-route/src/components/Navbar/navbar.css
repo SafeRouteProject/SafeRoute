@@ -16,7 +16,6 @@
   bottom: 0;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 
 .navbar-profile-icon {
@@ -26,5 +25,12 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.link{
+  color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }

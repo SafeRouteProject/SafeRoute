@@ -8,16 +8,16 @@ import lightBaseTheme from "material-ui/styles/baseThemes/lightBaseTheme";
 import Profile from "./components/Profile/Profile";
 import LandingLogin from "./components/LandingLogin/LandingLogin";
 import Home from "./components/Home/Home";
-import Routes from "./Routes";
+import routes from "./Routes";
 
-import Navbar from './components/Navbar/Navbar';
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
-          <Routes />
+            {routes}
           <Navbar />
         </MuiThemeProvider>
       </Provider>
