@@ -10,15 +10,26 @@ import LandingLogin from "./components/LandingLogin/LandingLogin";
 import Home from "./components/Home/Home";
 import Routes from "./Routes";
 
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+
 class App extends Component {
   render() {
     return (
+<<<<<<< HEAD
+      <div>
+        <Home />
+        <Navbar />
+      </div>
+    )
+=======
       <Provider store={store}>
         <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <Routes />
         </MuiThemeProvider>
       </Provider>
     );
+>>>>>>> master
   }
 }
 
