@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./LandingLogin.css";
+import "./Social.css";
 import { connect } from "react-redux";
 import { getCurrentLocation } from "../../ducks/user";
 
-class LandingLogin extends Component {
+class Social extends Component {
   constructor() {
     super();
     this.state = {};
@@ -16,7 +16,7 @@ class LandingLogin extends Component {
     clearInterval();
   }
   render() {
-    return <div />;
+    return <div>SOCIAL PAGE</div>;
   }
 }
 let mapStateToProps = state => {
@@ -24,4 +24,4 @@ let mapStateToProps = state => {
     ...state.user
   };
 };
-export default connect(mapStateToProps, { getCurrentLocation })(LandingLogin);
+export default connect(mapStateToProps, { getCurrentLocation })(Social);

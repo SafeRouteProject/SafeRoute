@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import "./Profile.css";
+import { connect } from "react-redux";
+import { getCurrentLocation } from "../../ducks/user";
 
 class Profile extends Component {
   constructor() {
     super();
     this.state = {};
+  }
+  componentDidMount() {
+    this.props.getCurrentLocation();
+    setInterval(() => this.props.getCurrentLocation(), 5000);
+  }
+  componentWillMount() {
+    clearInterval();
   }
   render() {
     return (
@@ -36,4 +45,9 @@ class Profile extends Component {
     );
   }
 }
-export default Profile;
+let mapStateToProps = state => {
+  return {
+    ...state.user
+  };
+};
+export default connect(mapStateToProps, { getCurrentLocation })(Profile);
