@@ -17,7 +17,6 @@ class Profile extends Component {
     clearInterval(intervalName);
   }
   render() {
-    // console.log(intervalName);
     return (
       <div className="profile-container">
         <div className="profile-banner" />
@@ -43,6 +42,7 @@ class Profile extends Component {
             <h3>+4</h3>
           </div>
         </section>
+        <div className="background" />
       </div>
     );
   }
