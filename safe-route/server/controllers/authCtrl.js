@@ -32,6 +32,10 @@ const createNewUser = (req, res) => {
       ])
       .then(response => {
         res.status(200).send("User created!");
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
       });
   });
 };
