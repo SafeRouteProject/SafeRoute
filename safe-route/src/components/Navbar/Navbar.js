@@ -6,25 +6,15 @@ import { BrowserRouter as Router, Link, Switch } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      // <div className="navbar-container">
-      //   <div className="navbar-profile-icon">
-      //     <i class="fas fa-exclamation-circle" />
-      //   </div>
-      //   <div className="navbar-profile-icon">
-      //     <i class="fas fa-users" />
-      //   </div>
-      //   <div className="navbar-profile-icon">
-      //     <i class="far fa-user-circle" />
-      //   </div>
       <div className="navbar-container">
-        <Link to="/" className="navbar-profile-icon">
-          <i class="fas fa-exclamation-circle" />
+        <Link to="/" class="link">
+          <i class="fas fa-exclamation-circle navbar-profile-icon" />
         </Link>
-        <Link to="/login" className="navbar-profile-icon">
-          <i class="fas fa-users" />
+        <Link to="/social" class="link">
+          <i class="fas fa-users navbar-profile-icon" />
         </Link>
-        <Link to="/profile" className="navbar-profile-icon">
-          <i class="far fa-user-circle" />
+        <Link to="/profile" class="link">
+          <i class="far fa-user-circle navbar-profile-icon" />
         </Link>
       </div>
     );
