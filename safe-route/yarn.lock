@@ -9,9 +9,6 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
-<<<<<<< HEAD
-"@types/jss@^9.3.0":
-=======
 "@material-ui/core@^1.0.0-rc.0":
   version "1.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-1.0.0-rc.0.tgz#8bd32a4e9c37bd5fa9227375a42fcced5e17cdfa"
@@ -51,7 +48,6 @@
     recompose "^0.26.0 || ^0.27.0"
 
 "@types/jss@^9.3.0", "@types/jss@^9.5.3":
->>>>>>> master
   version "9.5.3"
   resolved "https://registry.yarnpkg.com/@types/jss/-/jss-9.5.3.tgz#0c106de3fe0b324cd4173fac7dab26c12cda624e"
   dependencies:
@@ -5854,11 +5850,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-<<<<<<< HEAD
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
-=======
 prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1:
->>>>>>> master
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -6172,13 +6164,6 @@ react-scripts@1.1.4:
 react-scrollbar-size@^2.0.2:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.1.0.tgz#105e797135cab92b1f9e16f00071db7f29f80754"
-<<<<<<< HEAD
-  dependencies:
-    babel-runtime "^6.26.0"
-    prop-types "^15.6.0"
-    react-event-listener "^0.5.1"
-    stifle "^1.0.2"
-=======
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.6.0"
@@ -6190,7 +6175,6 @@ react-text-mask@^5.4.1:
   resolved "https://registry.yarnpkg.com/react-text-mask/-/react-text-mask-5.4.1.tgz#c3dd3e550e31d38b7c9da0178a2725960770e443"
   dependencies:
     prop-types "^15.5.6"
->>>>>>> master
 
 react-transition-group@^2.2.1:
   version "2.3.1"
