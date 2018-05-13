@@ -6,6 +6,7 @@ class Home extends Component {
     super();
     this.state = {};
   }
+
   render() {
     return <div />;
   }
