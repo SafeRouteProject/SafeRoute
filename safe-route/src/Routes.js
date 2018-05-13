@@ -5,6 +5,7 @@ import Alert from "./components/Alert/Alert";
 import Profile from "./components/Profile/Profile";
 import LandingLogin from "./components/LandingLogin/LandingLogin";
 import Social from "./components/Social/Social";
+import CreateUser from "./components/CreateUser/CreateUser";
 
 export default (
   <Switch>
@@ -13,5 +14,6 @@ export default (
     <Route path="/profile" component={Profile} />
     <Route path="/login" component={LandingLogin} />
     <Route path="/social" component={Social} />
+    <Route path="/create" component={CreateUser} />
   </Switch>
 );
