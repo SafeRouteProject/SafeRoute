@@ -1,3 +1,4 @@
+import axios from "axios";
 import NodeGeocoder from "node-geocoder";
 const geocoder = NodeGeocoder({
   provider: "google",
@@ -10,11 +11,13 @@ const geocoder = NodeGeocoder({
 const initialState = {
   userLat: "",
   userLong: "",
-  userAddress: ""
+  userAddress: "",
+  loading: false
 };
 
 //action constants
 const GET_CURRENT_LOCATION = "GET_CURRENT_LOCATION";
+const CREATE_USER = "CREATE_USER";
 
 //reducer
 let long;
@@ -42,6 +45,13 @@ export default function userReducer(state = initialState, action) {
         { enableHighAccuracy: false, maximumAge: 300000, timeout: 290000 }
       );
       return { ...state, userAddress: address, userLat: lat, userLong: long };
+
+    case `${CREATE_USER}_PENDING`:
+      return { ...state, loading: true };
+
+    case `${CREATE_USER}_FULFILLED`:
+      console.log(action.payload.data);
+
     // return { ...state };
     default:
       return { ...state };
@@ -49,9 +59,33 @@ export default function userReducer(state = initialState, action) {
 }
 
 //action creators
+
+//get users location interval
 export function getCurrentLocation() {
   return {
     type: GET_CURRENT_LOCATION,
     payload: null
+  };
+}
+
+//create user
+export function createUser(
+  userName,
+  email,
+  firstName,
+  lastName,
+  phoneNumber,
+  password
+) {
+  return {
+    type: CREATE_USER,
+    payload: axios.post("/api/createnewuser", {
+      userName,
+      email,
+      firstName,
+      lastName,
+      phoneNumber,
+      password
+    })
   };
 }
