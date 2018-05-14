@@ -57,50 +57,64 @@ class CreateUser extends Component {
       emailInput: "",
       firstNameInput: "",
       lastNameInput: "",
-      textmask: "(555)    -    ",
+      textmask: "(555)    -    ",
       passwordInput: "",
       showPassword: false,
       emailError: false,
       userNameKeyDownCount: 0,
       passwordError: false,
-      userNameError: null
+      userNameError: null,
+      firstNameError: null,
+      lastNameError: null,
+      numberError: false
     };
     this.handleCreateUser = this.handleCreateUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.toggleShowPassword = this.toggleShowPassword.bind(this);
   }
   handleCreateUser() {
+    const number =
+      this.state.textmask.slice(1, 4) +
+      this.state.textmask.slice(6, 9) +
+      this.state.textmask.slice(10);
+
     if (this.state.userNameInput.match(userNameRegex) === null) {
-      return this.setState({ userNameError: true });
+      this.setState({ userNameError: true });
+    } else {
+      this.setState({ userNameError: false });
     }
-    if (this.state.emailInput.match(emailRegex) === null) {
+
+    if (number.length < 10 || number.match(/^[0-9]*$/) === null) {
+      this.setState({ numberError: true });
+    } else {
+      this.setState({ numberError: false });
+    }
+
+    if (
+      !this.state.emailInput ||
+      this.state.emailInput.match(emailRegex) === null
+    ) {
       this.setState({ emailError: true });
+    } else {
+      this.setState({ emailError: false });
     }
+    if (this.state.firstNameInput.match(/^[a-zA-Z]+$/) === null) {
+      this.setState({ firstNameError: true });
+    } else {
+      this.setState({ firstNameError: false });
+    }
+    if (this.state.lastNameInput.match(/^[a-zA-Z]+$/) === null) {
+      this.setState({ lastNameError: true });
+    } else {
+      this.setState({ lastNameError: false });
+    }
+
     if (this.state.passwordInput.match(passwordRegex) === null) {
       console.log(this.state.passwordInput.match(passwordRegex));
       this.setState({ passwordError: true, passwordInput: "" });
+    } else {
+      this.setState({ passwordError: false, passwordInput: "" });
     }
-
-    //-------------REGEX FOR CHECKING IF THE INPUT ONLY CONTAINS LETTERS------------------//
-    // str.match(/^[a-zA-Z]+$/) check for only letters in the input
-
-    //-----------------REGEX FOR CHECKING IF THE INPUT IS AN EMAIL--------------------------//
-    //const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    //-------------------REGEX FOR VALIDATION OF THE PASSWORD----------------------------------//
-    //const regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-
-    //-------------------REGEX FOR USERNAME------------------//
-    //const regex = new RegExp("^[a-z0-9_-]{3,15}$")
-
-    // this.props.createUser(
-    //   userNameInput,
-    //   emailInput,
-    //   firstNameInput,
-    //   lastNameInput,
-    //   phoneNumberInput,
-    //   passwordInput
-    // );
   }
   handleChange = name => event => {
     this.setState({
@@ -160,6 +174,7 @@ class CreateUser extends Component {
             value={this.state.textmask}
             onChange={this.handleChange("textmask")}
             inputComponent={TextMaskCustom}
+            error={this.state.numberError}
           />
         </FormControl>
         {/* ------------------------First name must only contain letters--------------------- */}
@@ -169,11 +184,13 @@ class CreateUser extends Component {
           label="First Name"
           placeholder="First Name"
           error={
-            !this.state.firstNameInput
-              ? false
-              : this.state.firstNameInput.match(/^[a-zA-Z]+$/) === null
-                ? true
-                : false
+            this.state.firstNameError
+              ? true
+              : !this.state.firstNameInput
+                ? false
+                : this.state.firstNameInput.match(/^[a-zA-Z]+$/) === null
+                  ? true
+                  : false
           }
         />
         {/* ------------------------Last name must only contain letters--------------------- */}
@@ -183,11 +200,13 @@ class CreateUser extends Component {
           label="Last Name"
           placeholder="Last Name"
           error={
-            !this.state.lastNameInput
-              ? false
-              : this.state.lastNameInput.match(/^[a-zA-Z]+$/) === null
-                ? true
-                : false
+            this.state.lastNameError
+              ? true
+              : !this.state.lastNameInput
+                ? false
+                : this.state.lastNameInput.match(/^[a-zA-Z]+$/) === null
+                  ? true
+                  : false
           }
         />
         {/*-----------------------password must have a lowercase, uppercase, special character, a number, and 8 letters long --------------------------*/}
