@@ -5,7 +5,8 @@ const { json } = require("body-parser");
 const cors = require("cors");
 const session = require("express-session");
 const massive = require("massive");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3570;
+const { schema, root } = require(`${__dirname}/graphql/schema`);
 
 const {
   authenticateUser,
@@ -36,10 +37,6 @@ app.use(
     }
   })
 );
-
-//--------------USER AUTHENTICATION------------------
-app.post("/api/authenticate_user/:id", authenticateUser);
-app.post("/api/createnewuser", createNewUser);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
