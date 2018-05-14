@@ -1,3 +1,3 @@
 SELECT user_password
 FROM users
-WHERE user_id = $1;
+WHERE user_email = $1;
