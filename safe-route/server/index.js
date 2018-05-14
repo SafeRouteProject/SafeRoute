@@ -38,9 +38,8 @@ app.use(
 );
 
 //--------------USER AUTHENTICATION------------------
-app.post("/api/authenticate_user", authenticateUser);
-app.post("/api/create_new_user", createNewUser);
-app.post("/api/logout", logout);
+app.post("/api/authenticate_user/:id", authenticateUser);
+app.post("/api/createnewuser", createNewUser);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

@@ -24,13 +24,11 @@ const createNewUser = (req, res) => {
         hash
       ])
       .then(response => {
-        req.session.user = _.omit(response[0], "user_password");
-        //USER ON SESSIONS
-        res.status(201).send(_.omit(response[0], "user_password"));
-        //SENDS NEW USER BACK EXCEPT PASSWORD
+        res.status(200).send("User created!");
       })
       .catch(err => {
-        res.status(500).send(`Here is ${err}`);
+        console.log(err);
+        res.status(500).json(err);
       });
   });
 };

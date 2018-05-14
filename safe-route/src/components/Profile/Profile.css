@@ -1,0 +1,125 @@
+.profile-username,
+.profile-fullname,
+.profile-email,
+.profile-phone,
+.profile-groups-container {
+  font-family: "Raleway", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-container {
+  min-height: 100vh;
+  z-index: -5;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.pexels.com/photos/776390/pexels-photo-776390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+}
+
+.profile-banner {
+  width: 100vw;
+  height: 140px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(32, 188, 236),
+    rgb(22, 109, 223)
+  );
+}
+
+.profile-pfp {
+  width: 170px;
+  height: 170px;
+  /* background-color: #29B6F6; */
+  background: linear-gradient(
+    to bottom right,
+    rgb(32, 188, 236),
+    rgb(22, 126, 223)
+  );
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  transform: translate(-50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.103);
+}
+
+.profile-user-info-container {
+  width: 85%;
+  min-height: 100px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.109);
+  margin: auto;
+  margin-top: 120px;
+  padding: 10px 0;
+}
+
+.profile-username {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px 0;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.profile-fullname,
+.profile-email,
+.profile-phone {
+  font-size: 24px;
+  padding: 0 20px;
+  padding-bottom: 15px;
+}
+
+.profile-groups-container {
+  width: 85%;
+  min-height: 65px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.109);
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.profile-groups-text {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.profile-groups-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid rgb(22, 126, 223);
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.205);
+}
+
+.image-1 {
+  right: 15px;
+}
+
+.image-2 {
+  right: 35px;
+}
+
+.image-3 {
+  right: 55px;
+  color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
