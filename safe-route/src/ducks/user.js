@@ -77,15 +77,17 @@ export function createUser(
   phoneNumber,
   password
 ) {
+  console.log(userName, email, firstName, lastName, phoneNumber, password);
   return {
     type: CREATE_USER,
-    payload: axios.post("/api/createnewuser", {
-      userName,
-      email,
-      firstName,
-      lastName,
-      phoneNumber,
-      password
-    })
+    payload: null
+    // axios.post("/api/createnewuser", {
+    //   userName,
+    //   email,
+    //   firstName,
+    //   lastName,
+    //   phoneNumber,
+    //   password
+    // })
   };
 }
