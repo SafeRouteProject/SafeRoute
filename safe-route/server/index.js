@@ -7,13 +7,7 @@ const session = require("express-session");
 const massive = require("massive");
 const port = process.env.PORT || 3570;
 const { schema, root } = require(`${__dirname}/graphql/schema`);
-
-const {
-  authenticateUser,
-  createNewUser,
-  getUser,
-  logout
-} = require(`./controllers/authCtrl`);
+const graphqlHTTP = require("express-graphql");
 
 massive(process.env.DATABASE_KEY)
   .then(db => app.set("db", db))
