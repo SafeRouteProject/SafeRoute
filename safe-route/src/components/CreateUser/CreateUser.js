@@ -113,7 +113,23 @@ class CreateUser extends Component {
       console.log(this.state.passwordInput.match(passwordRegex));
       this.setState({ passwordError: true, passwordInput: "" });
     } else {
-      this.setState({ passwordError: false, passwordInput: "" });
+      this.setState({
+        passwordError: false,
+        passwordInput: "",
+        lastNameInput: "",
+        firstNameInput: "",
+        emailInput: "",
+        textmask: "(555)    -    ",
+        userNameInput: ""
+      });
+      createUser(
+        this.state.userNameInput,
+        this.state.emailInput,
+        this.state.firstNameInput,
+        this.state.lastNameInput,
+        this.state.textmask,
+        this.state.passwordInput
+      );
     }
   }
   handleChange = name => event => {
@@ -143,7 +159,8 @@ class CreateUser extends Component {
           }}
           onChange={this.handleChange("userNameInput")}
           label="User Name"
-          placeholder="User Name"
+          value={this.state.userNameInput}
+          // placeholder="User Name"
           error={
             !this.state.userNameError
               ? false
@@ -163,6 +180,7 @@ class CreateUser extends Component {
         <TextField
           onChange={this.handleChange("emailInput")}
           label="Email"
+          value={this.state.emailInput}
           placeholder="Email"
           error={this.state.emailError}
         />
@@ -182,6 +200,7 @@ class CreateUser extends Component {
         <TextField
           onChange={this.handleChange("firstNameInput")}
           label="First Name"
+          value={this.state.firstNameInput}
           placeholder="First Name"
           error={
             this.state.firstNameError
@@ -198,6 +217,7 @@ class CreateUser extends Component {
         <TextField
           onChange={this.handleChange("lastNameInput")}
           label="Last Name"
+          value={this.state.lastNameInput}
           placeholder="Last Name"
           error={
             this.state.lastNameError
