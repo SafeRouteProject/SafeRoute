@@ -60,6 +60,7 @@
   margin: auto;
   margin-top: 120px;
   padding: 10px 0;
+  max-width: 600px;
 }
 
 .profile-username {
@@ -90,6 +91,16 @@
   z-index: 1;
   background-color: white;
   border-radius: 5px;
+  max-width: 600px;
+}
+
+.group-image-container{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
 }
 
 .profile-groups-text {
@@ -109,10 +120,12 @@
 
 .image-1 {
   right: 15px;
+  transition: .3s ease-in-out;
 }
 
 .image-2 {
   right: 35px;
+  transition: .3s ease-in-out;
 }
 
 .image-3 {
@@ -122,4 +135,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .3s ease-in-out;
+}
+
+.image-2-true{
+  transform: translate(-70%);
+}
+
+.image-3-true{
+  transform: translate(-140%);
+}
+
+.image-1-true:hover, .image-2-true:hover, .image-3-true:hover{
+  border: 2px solid rgb(145, 19, 204);
 }
