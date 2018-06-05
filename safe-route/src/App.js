@@ -20,7 +20,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <MuiThemeProvider theme={theme}>
-          <img src={joe} className="App-logo" />
           {routes}
           <Navbar />
         </MuiThemeProvider>
