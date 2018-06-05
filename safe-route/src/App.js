@@ -11,7 +11,6 @@ import LandingLogin from "./components/LandingLogin/LandingLogin";
 import Home from "./components/Home/Home";
 import routes from "./Routes";
 import Navbar from "./components/Navbar/Navbar";
-import joe from "./joe.png";
 
 const theme = createMuiTheme();
 
