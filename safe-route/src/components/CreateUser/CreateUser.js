@@ -57,7 +57,7 @@ class CreateUser extends Component {
       emailInput: "",
       firstNameInput: "",
       lastNameInput: "",
-      textmask: "(555)    -    ",
+      textmask: "(555)   -    ",
       passwordInput: "",
       showPassword: false,
       emailError: false,
@@ -268,4 +268,7 @@ let mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { createUser })(CreateUser);
+export default connect(
+  mapStateToProps,
+  { createUser }
+)(CreateUser);
