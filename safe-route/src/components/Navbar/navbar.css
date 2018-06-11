@@ -6,7 +6,7 @@
 
 .navbar-container {
   width: 100vw;
-  height: 75px;
+  height: 65px;
   background: linear-gradient(
     to bottom right,
     rgb(32, 188, 236),
@@ -16,6 +16,7 @@
   bottom: 0;
   display: flex;
   justify-content: space-around;
+  z-index: 100;
 }
 
 .navbar-profile-icon {
