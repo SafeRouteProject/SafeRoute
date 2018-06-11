@@ -149,3 +149,9 @@
 .image-1-true:hover, .image-2-true:hover, .image-3-true:hover{
   border: 2px solid rgb(145, 19, 204);
 }
+
+@media (max-height: 640px) {
+  .profile-container{
+    padding-bottom: 85px;
+  }
+}
